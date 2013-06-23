@@ -9,14 +9,14 @@
 // Variables 
 $total-columns        : 12
 $column-width         : 9em
-$gutter-width         : 1em
+$gutter-width         : 2em
 $grid-padding         : $gutter-width
 
 // $universal-padding : 0.5em
 
-$main-link-color      : #0066cc
+$main-link-color      : #00a1d9
 
-// $main-dark-color   : black
+$main-dark-color      : #34495e
 // $main-light-color  : white
 // $sub-dark-color    : #767676
 
@@ -24,8 +24,8 @@ $bg-color             : #f8cf79
 // $border-color      : #d9d9d9
 // $light-border-color: rgba(white,.95)
 
-// $icons             : sprite-map("icons/*.png", $layout: smart)
-// $icons-hd          : sprite-map("icons-hd/*.png")
+$icons                : sprite-map("icons/*.png", $layout: smart)
+$icons-hd             : sprite-map("icons-hd/*.png")
 $default-border-radius: 5px
 
 
@@ -34,28 +34,35 @@ $default-border-radius: 5px
 +border-box-sizing
 
 // Icons
-// i
-//     background: $icons
-//     display: inline-block
-//     @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
-//         background: $icons-hd
-//         +background-size(image-width(sprite-path($icons)) auto)
-// @each $icon in sprite_names($icons)
-//     .icn-#{$icon}
-//         +sprite-dimensions($icons, $icon)
-//         background-position: sprite-position($icons, $icon)
-//         @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
-//             $offset: nth(sprite-position($icons-hd, $icon), 2) / 2
-//             background-position: 0 $offset
+i
+    background: $icons
+    display: inline-block
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+        background: $icons-hd
+        +background-size(image-width(sprite-path($icons)) auto)
+@each $icon in sprite_names($icons)
+    .icn-#{$icon}
+        +sprite-dimensions($icons, $icon)
+        background-position: sprite-position($icons, $icon)
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+            $offset: nth(sprite-position($icons-hd, $icon), 2) / 2
+            background-position: 0 $offset
     
 
 // Custom fonts
+@font-face 
+    font-family: 'Rublsign'
+    src: url('/static/fonts/Rublsign.eot')
+    src: url('/static/fonts/Rublsign.eot?#iefix') format('embedded-opentype'), url('/static/fonts/Rublsign.woff') format('woff'), url('/static/fonts/Rublsign.ttf') format('truetype'), url('/static/fonts/Rublsign.svg#gotham_probold') format('svg')
+    font-weight: normal
+    font-style: normal
 
 
 // Grids
 body 
-    font-family: sans-serif
+    font-family: "Myriad Pro", sans-serif
     -webkit-text-size-adjust: 100%
+    color: $main-dark-color
     background: $bg-color
 .grid-container
     +container($total-columns)
@@ -63,17 +70,71 @@ body
     background-color: white
     max-width: 64em
     padding: 0 2.5em
+.one-fourth
+    +span-columns(3)
+.two-fourth
+    +span-columns(6)
+.omega
+    +omega
 
 
 // Text styles   
 a 
     +link-colors($main-link-color, adjust-lightness($main-link-color, -15%))
     text-decoration: none
-    border-bottom: solid 1px rgba(0,102,204,.2)
-    &.no-border-link
-        border: none
     &.action-link
         border-bottom-style: dashed
+.rub
+    font-family: 'Rublsign'
+%bold-font
+    font-weight: 600
+.sub-header
+    font-size: 1em
+    @extend %bold-font
+    display: inline-block
+    margin-top: .8em
+    margin-bottom: .3em
+.phone-number
+    font-size: 1.25em
+    @extend .sub-header
+    margin-top: .45em
+    margin-bottom: .15em
+    a
+        color: $main-dark-color
+.list
+    > li
+        font-size: .875em
+        line-height: 1.2em
+        display: inline-block
+        margin-top: .3em
+        position: relative
+.dash-list
+    @extend .list
+    > li
+        padding-left: 1em
+        &:before
+            content: '– '
+            position: absolute
+            left: 0
+
+
+// Header and footer
+.main-header
+    padding: 1em 0
+.contacts-holder
+    i
+        margin-right: .3em
+        margin-bottom: -.15em
+.login-holder
+    > a
+        margin-left: .7em
+.mini-cart-holder
+    margin-top: .35em
+    i
+        margin-right: .3em
+
+
+        
 
 
 // Fix
