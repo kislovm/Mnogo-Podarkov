@@ -17,11 +17,11 @@ $grid-padding         : $gutter-width
 $main-link-color      : #00a1d9
 
 $main-dark-color      : #34495e
-// $main-light-color  : white
-// $sub-dark-color    : #767676
+$main-light-color     : #51bf98
+$sub-dark-color       : #929292
 
 $bg-color             : #f8cf79 
-// $border-color      : #d9d9d9
+$border-color         : #dee1e3
 // $light-border-color: rgba(white,.95)
 
 $icons                : sprite-map("icons/*.png", $layout: smart)
@@ -68,12 +68,16 @@ body
     +container($total-columns)
     +pad(0,0)
     background-color: white
-    max-width: 64em
+    width: 64em
     padding: 0 2.5em
 .one-fourth
     +span-columns(3)
-.two-fourth
+.one-third
+    +span-columns(4)
+.two-fourth, .one-half
     +span-columns(6)
+.three-fourth
+    +span-columns(9)
 .omega
     +omega
 
@@ -86,11 +90,11 @@ a
         border-bottom-style: dashed
 .rub
     font-family: 'Rublsign'
-%bold-font
+.bold-font
     font-weight: 600
 .sub-header
     font-size: 1em
-    @extend %bold-font
+    @extend .bold-font
     display: inline-block
     margin-top: .8em
     margin-bottom: .3em
@@ -105,7 +109,7 @@ a
     > li
         font-size: .875em
         line-height: 1.2em
-        display: inline-block
+        display: block
         margin-top: .3em
         position: relative
 .dash-list
@@ -116,11 +120,46 @@ a
             content: '– '
             position: absolute
             left: 0
+p
+    font-size: .875em
+    line-height: 1.2em
+    display: block
+    margin-top: .5em
+    position: relative
+
+
+// Forms
+.text-input
+    font-family: "Myriad Pro", sans-serif
+    font-size: 1em
+    color: $main-dark-color
+    padding: .4em .5em .2em
+    display: inline-block
+    border: solid 2px $border-color
+    +border-radius
+    outline: none
+    &:focus
+        border-color: $main-light-color
+
+
+// Buttons
+.medium-btn
+    display: inline-block
+    padding: .4em 1em .2em
+    border: solid 2px transparent
+    +border-radius
+.green-btn
+    color: white
+    background: $main-light-color
+    border-color: $main-light-color
+    &:hover
+        color: white
+        background: adjust-lightness($main-light-color, -8%)
 
 
 // Header and footer
 .main-header
-    padding: 1em 0
+    padding: 1.2em 0
 .contacts-holder
     i
         margin-right: .3em
@@ -132,9 +171,71 @@ a
     margin-top: .35em
     i
         margin-right: .3em
+.main-footer
+    background: $main-light-color
+    margin: 1.5em -2.5em 0
+    padding: .7em 2.5em
 
 
-        
+// Navigation and search
+.main-nav-holder
+    background: #eef1f2
+    margin: 0 -3em
+    padding: 1.5em 3em 1em
+    position: relative
+.logo
+    position: relative
+    top: .2em
+.main-nav
+    padding-bottom: .2em
+    > a
+        margin-right: 1em
+        &.selected
+            @extend .bold-font
+            color: $main-dark-color
+            pointer-events: none
+.search-holder
+    position: relative
+    i
+        position: absolute
+        top: .6em
+        left: .7em
+        z-index: 2
+        +opacity(.8)
+.main-search-input
+    width: 37.5em
+    margin-right: .5em
+    padding-left: 2.3em
+
+
+// Banners
+.main-banners-holder
+    padding-top: 2em
+.main-banner
+    background-color: $border-color
+    background-position: left top
+    display: block
+    width: 300px
+    height: 200px
+    border: solid 3px $main-light-color
+    +border-radius(15px)
+    &:hover
+        border-color: adjust-lightness($main-light-color, -8%)
+
+
+// Catalog table
+.catalog-table
+    padding-top: .9em
+.sub-menu
+    color: $sub-dark-color
+    padding-top: .6em
+.catalog-table-row
+    padding-top: .6em
+
+
+// SEO text
+.seo-text-holder
+    margin-top: 1.5em
 
 
 // Fix
@@ -143,6 +244,11 @@ a
         content: ''
         display: table
         clear: both
+.big-hor-splitter
+    background: $border-color
+    width: 100%
+    height: 1px
+    margin-top: 1.5em
 .no-flick
     +translate3d(0,0,0)
 .centered
