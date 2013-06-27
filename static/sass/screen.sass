@@ -88,10 +88,18 @@ a
     text-decoration: none
     &.action-link
         border-bottom-style: dashed
+.font-like-link
+    color: $main-dark-color
 .rub
     font-family: 'Rublsign'
 .bold-font
     font-weight: 600
+.header
+    font-size: 1.4em
+    @extend .bold-font
+    display: inline-block
+    margin-top: .8em
+    margin-bottom: .3em
 .sub-header
     font-size: 1em
     @extend .bold-font
@@ -112,6 +120,8 @@ a
         display: block
         margin-top: .3em
         position: relative
+        > a
+            display: inline-block
 .dash-list
     @extend .list
     > li
@@ -120,6 +130,14 @@ a
             content: '– '
             position: absolute
             left: 0
+        &.selected
+            &:before
+                content: ' '
+                @extend i
+                @extend .icn-small-star
+                top: .25em
+            > a
+                color: $sub-dark-color
 p
     font-size: .875em
     line-height: 1.2em
@@ -233,6 +251,76 @@ p
     padding-top: .6em
 
 
+// Slider
+.slider
+    margin-top: 2em
+    padding-top: 1.4em
+    border: solid 1px $bg-color
+    +border-radius
+    position: relative
+.slider-title
+    background: white
+    padding: .5em 1em
+    position: absolute
+    top: -1em
+    left: 3em
+.icn-slider-left-arrow
+    margin-top: -12px
+    position: absolute
+    top: 50%
+    left: -12px
+    cursor: pointer
+.icn-slider-right-arrow
+    @extend .icn-slider-left-arrow
+    left: auto
+    right: -12px
+.slider-holder
+    overflow: hidden
+.slide
+    padding-bottom: .8em
+.pagination
+    text-align: center
+    display: block
+    margin-top: 1.5em
+    margin-bottom: 2.5em
+    > li
+        display: inline-block
+        margin: 0 .1em
+        a
+            display: inline-block
+            padding: .35em .5em .2em
+            +border-radius(20px)
+        .selected
+            color: white
+            background: $main-light-color
+
+
+
+// Items catalog
+.catalog-items-holder
+    margin-top: 3.5em
+    .slider-title
+        font-size: 1.5em
+.product-mini-holder
+    text-align: center
+    padding: .5em 1em
+    @extend .one-fourth
+    +nth-omega(3n+1)
+.product-mini-photo
+    width: 140px
+    height: 140px
+.product-mini-name
+    display: block
+    margin-top: .5em
+    > a
+        font-size: .95em
+        display: inline-block
+.product-mini-price
+    text-align: center
+    display: block
+    margin-top: .3em
+
+
 // SEO text
 .seo-text-holder
     margin-top: 1.5em
@@ -260,4 +348,7 @@ p
     text-align: right
 .hide
     display: none !important
+.ie-nth-child
+    float: right\9 !important
+    margin-right: 0\9 !important
 
