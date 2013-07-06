@@ -88,6 +88,8 @@ a
     text-decoration: none
     &.action-link
         border-bottom-style: dashed
+.sub-dark-color
+    color: $sub-dark-color
 .font-like-link
     color: $main-dark-color
 .rub
@@ -166,13 +168,28 @@ p
     padding: .4em 1em .2em
     border: solid 2px transparent
     +border-radius
+.big-btn
+    @extend .medium-btn
+    font-size: 1.2em
+    padding: .4em .8em .4em
 .green-btn
     color: white
     background: $main-light-color
     border-color: $main-light-color
     &:hover
         color: white
+        background: adjust-lightness($main-light-color, -2%)
+    &:active
         background: adjust-lightness($main-light-color, -8%)
+.blue-btn
+    color: white
+    background: $main-link-color
+    border-color: $main-link-color
+    &:hover
+        color: white
+        background: adjust-lightness($main-link-color, -2%)
+    &:active
+        background: adjust-lightness($main-link-color, -8%)
 
 
 // Header and footer
@@ -201,6 +218,26 @@ p
     margin: 0 -3em
     padding: 1.5em 3em 1em
     position: relative
+    &:before
+        content: ''
+        width: 0px
+        height: 0px
+        border-style: solid
+        border-width: 0 8px 11px 0
+        border-color: transparent $sub-dark-color  transparent transparent
+        position: absolute
+        bottom: -11px
+        left: 0
+    &:after
+        content: ''
+        width: 0px
+        height: 0px
+        border-style: solid
+        border-width: 0 0 11px 8px
+        border-color: transparent transparent transparent $sub-dark-color
+        position: absolute
+        bottom: -11px
+        right: 0
 .logo
     position: relative
     top: .2em
@@ -295,7 +332,6 @@ p
             background: $main-light-color
 
 
-
 // Items catalog
 .catalog-items-holder
     margin-top: 3.5em
@@ -319,6 +355,126 @@ p
     text-align: center
     display: block
     margin-top: .3em
+
+
+// Product
+.product-holder
+    padding-top: 2em
+.product-breadcrumbs
+    font-size: .875em
+    color: $sub-dark-color
+    margin-bottom: -.4em
+.product-id
+    font-size: .9em
+    color: $sub-dark-color
+    display: block
+    margin-top: -.2em
+.product-details
+    width: 22em
+    margin-top: 1em
+.product-details-line
+    @extend .group
+    width: 100%
+    margin-top: .1em
+.product-details-label
+    float: left
+    width: 11em
+    padding-right: 1.5em
+    position: relative
+    &:after
+        content: ''
+        background: $border-color
+        height: 1px
+        position: absolute
+        top: .8em
+        right: 0
+        left: 0
+        z-index: 1
+    > span
+        font-size: .875em
+        line-height: 1.2em
+        word-wrap: break-word
+        background: white
+        display: inline-block
+        max-width: 100%
+        padding-right: .1em
+        position: relative
+        z-index: 2
+.product-details-value
+    float: left
+    width: 11em
+    > span
+        font-size: .875em
+        line-height: 1.2em
+        word-wrap: break-word
+        display: inline-block
+        max-width: 100%
+        padding-left: .1em
+.buy-btn-holder
+    width: 22em
+    margin-top: 1.8em
+    .icn-cart-white
+        margin-bottom: -.25em
+        margin-left: .3em
+.product-availability
+    font-size: .8em
+    color: $sub-dark-color
+    display: inline-block
+    margin-top: 1em
+    > i
+        margin-bottom: -.3em
+        margin-right: .5em
+        +opacity(.7)
+.active-product-photo
+    background-position: center top
+    background-repeat: no-repeat
+    +background-size(cover)
+    width: 400px
+    height: 400px
+    border: solid 1px $border-color
+.product-photos-thumbnails
+    li
+        background-position: center top
+        background-repeat: no-repeat
+        +background-size(cover)
+        display: block
+        float: left
+        width: 72px
+        height: 72px
+        margin-top: .5em
+        margin-right: 10px
+        border: solid 1px $border-color
+        position: relative
+        +opacity(.6)
+        cursor: pointer
+        &:hover
+            border-color: $main-light-color
+            +opacity(1)
+        &.active
+            border-color: $main-light-color
+            +opacity(1)
+            &:before
+                content: ''
+                @extend i
+                @extend .icn-check-2-green
+                margin-top: -20px
+                margin-left: -20px
+                position: absolute
+                top: 50%
+                left: 50%
+                z-index: 3
+                +opacity(.8)
+            &:after
+                content: ''
+                background-color: rgba(black,.45)
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                z-index: 2
+
+
 
 
 // SEO text
@@ -351,4 +507,9 @@ p
 .ie-nth-child
     float: right\9 !important
     margin-right: 0\9 !important
+.disabled
+    background: $border-color
+    border-color: $border-color
+    +opacity(.9)
+    pointer-events: none
 
