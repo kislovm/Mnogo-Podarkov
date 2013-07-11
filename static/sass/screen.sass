@@ -19,6 +19,7 @@ $main-link-color      : #00a1d9
 $main-dark-color      : #34495e
 $main-light-color     : #51bf98
 $sub-dark-color       : #929292
+$error-color          : #c53730
 
 $bg-color             : #f8cf79 
 $border-color         : #dee1e3
@@ -205,6 +206,24 @@ p
 
 
 // Forms
+.form-holder
+    padding-bottom: 2em
+.field
+    +prefix(3)
+    margin-top: .5em
+    position: relative
+    .text-input
+        min-width: 21em   
+    &.with-border
+        margin-bottom: .8em
+        padding-bottom: .8em 
+.field-label
+    font-style: italic
+    +span-columns(3)
+    display: inline-block
+    position: absolute
+    top: .7em
+    left: 0
 .text-input
     font-family: "Myriad Pro", sans-serif
     font-size: 1em
@@ -216,7 +235,20 @@ p
     outline: none
     &:focus
         border-color: $main-light-color
-
+    &.error
+        background: #fbc5bb
+        border-color: $error-color
+.text-area
+    @extend .text-input
+    min-height: 5em
+    resize: vertical
+.field-caption
+    font-size: .8em
+    display: block
+    margin-top: .3em
+    &.error
+        color: $error-color
+    
 
 // Buttons
 .medium-btn
@@ -266,6 +298,7 @@ p
     background: $main-light-color
     margin: 1.5em -2.5em 0
     padding: .7em 2.5em
+    +box-shadow(adjust-lightness($main-light-color, -15%) 0 3px 0 -2px, adjust-lightness($main-light-color, -13%) 0 6px 0 -4px, adjust-lightness($main-light-color, -10%) 0 8px 0 -6px, adjust-lightness($main-light-color, -5%) 0 10px 0 -7px)
 
 
 // Navigation and search
@@ -317,6 +350,23 @@ p
     width: 37.5em
     margin-right: .5em
     padding-left: 2.3em
+.sub-nav
+    +span-columns(2.5)
+    margin-top: .65em
+    padding-bottom: .8em
+    border: solid 1px $border-color
+    border-left-color: transparent
+    +border-right-radius
+    a.selected
+        color: $sub-dark-color
+        pointer-events: none
+        &:before
+            content: ' '
+            @extend i
+            @extend .icn-small-star
+            position: absolute
+            top: .25em
+            left: -.8em
 
 
 // Banners
@@ -533,6 +583,33 @@ p
 // SEO text
 .seo-text-holder
     margin-top: 1.5em
+
+
+// Personal cabinet
+.cabinet-holder
+    min-height: 15em
+    margin-top: 1em
+.order-history-table
+    font-size: .875em
+    width: 100%
+    td, th
+        padding: .3em
+    th
+        font-weight: bold
+    .cancelled
+        font-style: italic
+        +opacity(.3)
+    .order-history-price
+        text-align: right
+        white-space: nowrap
+        padding-right: 5em
+.order-detail-table
+    font-size: .875em
+    td, th
+        padding: .3em
+.order-detail-label
+    color: $sub-dark-color
+    margin-right: .5em
 
 
 // Fix

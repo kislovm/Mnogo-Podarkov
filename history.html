@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Много подарков</title>
+    <link href="/static/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <html class="ie">
+    <![endif]-->
+</head>
+<body>
+    <div class="grid-container">
+
+        <header class="main-header">
+            <div class="group">
+                <div class="contacts-holder one-fourth">
+                    <span class="phone-number" itemprop="telephone">+7 (495) 518-54-56</span>
+                    <ul class="list">
+                        <li><a href="#"><i class="icn-phone"></i> Заказать звонок</a></li>
+                        <li><a href="#"><i class="icn-mail"></i> Написать нам письмо</a></li>
+                        <li><a href="#"><i class="icn-vk"></i> Группа вКонтакте</a></li>
+                        <li><a href="#"><i class="icn-fb"></i> Граппа в Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="new-items-list-holder two-fourth">
+                    <h2 class="sub-header">Последние поступления:</h2>
+                    <ul class="list dash-list">
+                        <li><a href="#">Неоновая вывеска «Welcome»</a></li>
+                        <li><a href="#">Подарочное издание фильма «Москва слезам не верит»</a></li>
+                        <li><a href="#">Персидский ковер ручной работы (Иран)</a></li>
+                        <li><a href="#">Коллекция ручек Montegrappa Extra Ukraine</a></li>
+                    </ul>
+                </div>
+                <div class="group one-fourth align-right omega">
+                    <div class="login-holder">
+                        <a href="#" class="sub-header">Личный кабинет</a>
+                        <a href="#" class="sub-header">Выход</a>
+                    </div>
+                    <div class="mini-cart-holder">
+                        <h2 class="sub-header"><i class="icn-cart"></i> Ваша корзина:</h2>
+                        <ul class="list">
+                            <li>1 товар на сумму 12 324 <span class="rub">р</span></li>
+                            <li><a href="#">Оформить заказ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="main-nav-holder">
+            <div class="group">
+                <div class="logo-holder one-fourth">
+                    <a href="#" class="logo"><i class="icn-logo"></i></a>
+                </div>
+                <div class="group three-fourth omega">
+                    <nav class="main-nav">
+                        <a href="#">Главная</a>
+                        <a href="#">Акции</a>
+                        <a href="#">Доставка и оплата</a>
+                        <a href="#">Контактные данные</a>
+                        <a href="#">О компании</a>
+                    </nav>
+                    <div class="search-holder">
+                        <i class="icn-search"></i>
+                        <input type="text" placeholder="Что вы ищете?" class="text-input main-search-input">
+                        <a href="#" class="medium-btn green-btn">Найти</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cabinet-holder">
+            <div class="group">
+                <div class="sub-nav">
+                    <h2 class="sub-header">Личный кабинет</h2>
+                    <ul class="list">
+                        <li><a href="/history.html" class="selected">Мои заказы</a></li>
+                        <li><a href="/address.html">Мои данные</a></li>
+                    </ul>
+                </div>
+                <div class="three-fourth omega">
+                    <h2 class="header">Мои заказы</h2>
+                    <table class="order-history-table">
+                        <tr>
+                            <th>Заказ</th>
+                            <th>Дата</th>
+                            <th>Адресат</th>
+                            <th class="align-center">Сумма заказа</th>
+                            <th>Статус</th>
+                        </tr>
+                        <tr>
+                            <td><a href="#">465105</a></td>
+                            <td>28.10.12</td>
+                            <td>Константин Константинов</td>
+                            <td class="order-history-price">4100 <span class="rub">р</span></td>
+                            <td>Доставлен</td>
+                        </tr>
+                        <tr class="cancelled">
+                            <td><a href="#">465153</a></td>
+                            <td>12.08.12</td>
+                            <td>Константин Константинов</td>
+                            <td class="order-history-price">12 340 <span class="rub">р</span></td>
+                            <td>Отменен</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">182035</a></td>
+                            <td>03.03.12</td>
+                            <td>Константин Константинов</td>
+                            <td class="order-history-price">1900 <span class="rub">р</span></td>
+                            <td>Доставлен</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="group">
+                <div class="one-half">Телефон: <span itemprop="telephone">+7 (495) 518-54-56</span></div>
+                <div class="align-right one-half omega">© 2009–2013 Много Подарков</div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JS -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
