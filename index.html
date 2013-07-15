@@ -11,6 +11,40 @@
     <![endif]-->
 </head>
 <body>
+
+    <!-- Popup -->
+    <div class="popup-container">
+        <div class="popup-holder">
+            <div class="popup-text-holder">
+                <h2 class="header">Регистрация</h2>
+                <i class="icn-cross-red hide-popup"></i>
+                <div class="popup-form-holder">
+                    <div class="field">
+                        <label for="" class="field-label">Имя</label>
+                        <input type="text" value="Константин" class="text-input">
+                    </div>
+                    <div class="field">
+                        <label for="" class="field-label">Email</label>
+                        <input type="email" value="mail@mail.ru" class="text-input">
+                        <!-- <span class="field-caption error">Неправильный формат адреса.</span> -->
+                    </div>
+                    <div class="field">
+                        <label for="" class="field-label">Пароль</label>
+                        <input type="password" value="" class="text-input">
+                    </div>
+                    <div class="field">
+                        <label for="" class="field-label">Повторите пароль</label>
+                        <input type="password" value="" class="text-input">
+                    </div>
+                    <div class="field btn-holder">
+                        <a href="#" class="medium-btn blue-btn">Зарегистрироваться</a>
+                        <a href="#" class="medium-btn">Вход</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="grid-container">
 
         <header class="main-header">
@@ -36,7 +70,7 @@
                 <div class="group one-fourth align-right omega">
                     <div class="login-holder">
                         <a href="#" class="sub-header">Вход</a>
-                        <a href="#" class="sub-header">Регистрация</a>
+                        <a href="#" class="sub-header show-popup">Регистрация</a>
                     </div>
                     <div class="mini-cart-holder">
                         <h2 class="sub-header"><i class="icn-cart"></i> Ваша корзина:</h2>

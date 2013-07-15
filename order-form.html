@@ -11,6 +11,33 @@
     <![endif]-->
 </head>
 <body>
+
+    <!-- Popup -->
+    <div class="popup-container">
+        <div class="popup-holder">
+            <div class="popup-text-holder">
+                <h2 class="header">Вход</h2>
+                <i class="icn-cross-red hide-popup"></i>
+                <div class="popup-form-holder">
+                    <div class="field">
+                        <label for="" class="field-label">Email</label>
+                        <input type="email" value="mail@mail.ru" class="text-input">
+                        <!-- <span class="field-caption error">Неправильный формат адреса.</span> -->
+                    </div>
+                    <div class="field">
+                        <label for="" class="field-label">Пароль</label>
+                        <input type="password" value="" class="text-input">
+                        <span class="field-caption"><a href="#">Забыли пароль?</a></span>
+                    </div>
+                    <div class="field btn-holder">
+                        <a href="#" class="medium-btn blue-btn">Войти</a>
+                        <a href="#" class="medium-btn">Регистрация</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="grid-container">
 
         <header class="main-header">
@@ -74,57 +101,53 @@
         <section class="cabinet-holder">
             <div class="group">
                 <div class="sub-nav">
-                    <h2 class="sub-header">Личный кабинет</h2>
+                    <h2 class="sub-header">Оформление заказа</h2>
                     <ul class="list">
-                        <li><a href="/history.html">Мои заказы</a></li>
-                        <li><a href="/address.html">Мои данные</a></li>
+                        <li><a href="#">1. Корзина</a></li>
+                        <li><span class="selected">2. Личные данные</span></li>
                     </ul>
                 </div>
                 <div class="three-fourth omega">
-                    <h2 class="header">Заказ № 465105</h2>
-                    <table class="order-detail-table">
-                        <tr>
-                            <td class="order-detail-label">Дата:</td>
-                            <td>28.10.12</td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Адресат:</td>
-                            <td>Константин Константинов</td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Адрес:</td>
-                            <td>Москва, Измайловское шоссе, дом 31, квартира 21</td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Сумма:</td>
-                            <td>4100 <span class="rub">р</span></td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Статус:</td>
-                            <td>Доставлен</td>
-                        </tr>
-                    </table>
-                    <br />
-                    <table class="order-history-table">
-                        <tr>
-                            <th></th>
-                            <th>Наименование</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <td>1.</td>
-                            <td><a href="#">Коллаж-ключница «Арбалет», 31 х 40 см </a><span class="product-id">ID 7973862</span></td>
-                            <td class="align-right">1100 <span class="rub">р</span></td>
-                            <td>× 1 шт.</td>
-                        </tr>
-                        <tr>
-                            <td>2.</td>
-                            <td><a href="#">Зажигалка Zippo Engine Turn Star</a><span class="product-id">ID 7973862</span></td>
-                            <td class="align-right">1100 <span class="rub">р</span></td>
-                            <td>× 1 шт.</td>
-                        </tr>
-                    </table>
+                    <h2 class="header">Личные данные</h2>
+                    <a href="#" class="have-account-link show-popup">Я уже зарегистрирован</a>
+                    <div class="form-holder">
+                        <div class="field">
+                            <label for="" class="field-label">Фамилия</label>
+                            <input type="text" value="Константинов" class="text-input">
+                        </div>
+                        <div class="field">
+                            <label for="" class="field-label">Имя</label>
+                            <input type="text" value="Константин" class="text-input">
+                        </div>
+                        <div class="field">
+                            <label for="" class="field-label">Мобильный телефон</label>
+                            <input type="tel" value="+7 (916) 631-20-00" class="text-input">
+                        </div>
+                        <div class="field">
+                            <label for="" class="field-label">Email</label>
+                            <input type="email" value="mail@mail.ru" class="text-input">
+                            <!-- <span class="field-caption error">Неправильный формат адреса.</span> -->
+                        </div>
+                        <div class="field">
+                            <label for="" class="field-label">Способ доставки</label>
+                            <div class="radio-holder">
+                                <input type="radio" name="delivery" checked="checked" id="deliv"> <label for="deliv">Курьер</label>
+                                <input type="radio" name="delivery" id="hand"> <label for="hand">Самовывоз</label>
+                                <input type="radio" name="delivery" id="mail"> <label for="mail">Почта</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="field-label">Адрес доставки</label>
+                            <textarea class="text-area">Москва, Измайловское шоссе, дом 31, квартира 21</textarea>
+                        </div>
+                        <div class="field">
+                            <label for="" class="field-label">Комментарий</label>
+                            <textarea class="text-area"></textarea>
+                        </div>
+                        <div class="field">
+                            <a href="#" class="medium-btn blue-btn">Отправить заказ</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

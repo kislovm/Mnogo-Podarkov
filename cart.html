@@ -74,57 +74,44 @@
         <section class="cabinet-holder">
             <div class="group">
                 <div class="sub-nav">
-                    <h2 class="sub-header">Личный кабинет</h2>
+                    <h2 class="sub-header">Оформление заказа</h2>
                     <ul class="list">
-                        <li><a href="/history.html">Мои заказы</a></li>
-                        <li><a href="/address.html">Мои данные</a></li>
+                        <li><span class="selected">1. Корзина</span></li>
+                        <li><span>2. Личные данные</span></li>
                     </ul>
                 </div>
                 <div class="three-fourth omega">
-                    <h2 class="header">Заказ № 465105</h2>
-                    <table class="order-detail-table">
+                    <h2 class="header">Корзина</h2>
+                    <!-- <span class="epty-cart-message">Ваша корзина пока пуста.</span> -->
+                    <table class="order-cart-table">
                         <tr>
-                            <td class="order-detail-label">Дата:</td>
-                            <td>28.10.12</td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Адресат:</td>
-                            <td>Константин Константинов</td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Адрес:</td>
-                            <td>Москва, Измайловское шоссе, дом 31, квартира 21</td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Сумма:</td>
-                            <td>4100 <span class="rub">р</span></td>
-                        </tr>
-                        <tr>
-                            <td class="order-detail-label">Статус:</td>
-                            <td>Доставлен</td>
-                        </tr>
-                    </table>
-                    <br />
-                    <table class="order-history-table">
-                        <tr>
+                            <th></th>
                             <th></th>
                             <th>Наименование</th>
-                            <th></th>
+                            <th class="order-history-price">Стоимость</th>
+                            <th>Количество</th>
                             <th></th>
                         </tr>
                         <tr>
                             <td>1.</td>
+                            <td class="align-center"><a href="#"><img src="http://www.hedgehogshop.co.uk/catalog/images/b_dress_up_shield_large_red.jpg" alt="" width="50px"></a></td>
                             <td><a href="#">Коллаж-ключница «Арбалет», 31 х 40 см </a><span class="product-id">ID 7973862</span></td>
-                            <td class="align-right">1100 <span class="rub">р</span></td>
-                            <td>× 1 шт.</td>
+                            <td class="order-history-price">12 324 <span class="rub">р</span></td>
+                            <td>× <input type="text" value="1" class="text-input qt-input"> шт.</td>
+                            <td><span class="del-item">удалить</span></td>
                         </tr>
-                        <tr>
-                            <td>2.</td>
-                            <td><a href="#">Зажигалка Zippo Engine Turn Star</a><span class="product-id">ID 7973862</span></td>
-                            <td class="align-right">1100 <span class="rub">р</span></td>
-                            <td>× 1 шт.</td>
+                        <tr class="total-row">
+                            <td></td>
+                            <td></td>
+                            <td class="align-right">Итого:</td>
+                            <td class="order-history-price">12 324 <span class="rub">р</span></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </table>
+                    <div class="btn-holder">
+                        <a href="#" class="medium-btn blue-btn">Оформить заказ</a>
+                    </div>
                 </div>
             </div>
         </section>
