@@ -11,75 +11,12 @@
     <![endif]-->
 </head>
 <body>
-
-    <!-- Popup -->
-    <div class="popup-container">
-        <div class="popup-holder">
-            <div class="popup-text-holder">
-                <h2 class="header">Регистрация</h2>
-                <i class="icn-cross-red hide-popup"></i>
-                <div class="popup-form-holder">
-                    <div class="field">
-                        <label for="" class="field-label">Имя</label>
-                        <input type="text" value="Константин" class="text-input">
-                    </div>
-                    <div class="field">
-                        <label for="" class="field-label">Email</label>
-                        <input type="email" value="mail@mail.ru" class="text-input">
-                        <!-- <span class="field-caption error">Неправильный формат адреса.</span> -->
-                    </div>
-                    <div class="field">
-                        <label for="" class="field-label">Пароль</label>
-                        <input type="password" value="" class="text-input">
-                    </div>
-                    <div class="field">
-                        <label for="" class="field-label">Повторите пароль</label>
-                        <input type="password" value="" class="text-input">
-                    </div>
-                    <div class="field btn-holder">
-                        <a href="#" class="medium-btn blue-btn">Зарегистрироваться</a>
-                        <a href="#" class="medium-btn">Вход</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="grid-container">
 
         <header class="main-header">
             <div class="group">
-                <div class="contacts-holder one-fourth">
-                    <span class="phone-number" itemprop="telephone">+7 (495) 518-54-56</span>
-                    <ul class="list">
-                        <li><a href="#"><i class="icn-phone"></i> Заказать звонок</a></li>
-                        <li><a href="#"><i class="icn-mail"></i> Написать нам письмо</a></li>
-                        <li><a href="#"><i class="icn-vk"></i> Группа вКонтакте</a></li>
-                        <li><a href="#"><i class="icn-fb"></i> Граппа в Facebook</a></li>
-                    </ul>
-                </div>
-                <div class="new-items-list-holder two-fourth">
-                    <h2 class="sub-header">Последние поступления:</h2>
-                    <ul class="list dash-list">
-                        <li><a href="#">Неоновая вывеска «Welcome»</a></li>
-                        <li><a href="#">Подарочное издание фильма «Москва слезам не верит»</a></li>
-                        <li><a href="#">Персидский ковер ручной работы (Иран)</a></li>
-                        <li><a href="#">Коллекция ручек Montegrappa Extra Ukraine</a></li>
-                    </ul>
-                </div>
-                <div class="group one-fourth align-right omega">
-                    <div class="login-holder">
-                        <a href="#" class="sub-header">Вход</a>
-                        <a href="#" class="sub-header show-popup">Регистрация</a>
-                    </div>
-                    <div class="mini-cart-holder">
-                        <h2 class="sub-header"><i class="icn-cart"></i> Ваша корзина:</h2>
-                        <ul class="list">
-                            <li>1 товар на сумму 12 324 <span class="rub">р</span></li>
-                            <li><a href="#">Оформить заказ</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="one-half phone-number">Телефон: <span class="header-text" itemprop="telephone">+7 (495) 518-54-56</span></div>
+                <div class="align-right one-half omega"><span class="register header-link">Зарегестрироваться</span>&nbsp;/&nbsp;<span class="login header-link">Войти</span></div>
             </div>
         </header>
 
@@ -88,33 +25,55 @@
                 <div class="logo-holder one-fourth">
                     <a href="#" class="logo"><i class="icn-logo"></i></a>
                 </div>
-                <div class="group three-fourth omega">
+                <div class="group two-fourth">
                     <nav class="main-nav">
                         <a href="#" class="selected">Главная</a>
                         <a href="#">Акции</a>
                         <a href="#">Доставка и оплата</a>
                         <a href="#">Контактные данные</a>
-                        <a href="#">О компании</a>
                     </nav>
-                    <div class="search-holder">
+                    <div class="search-holder text-input">
                         <i class="icn-search"></i>
-                        <input type="text" placeholder="Что вы ищете?" class="text-input main-search-input">
-                        <a href="#" class="medium-btn green-btn">Найти</a>
+                        <input type="text" placeholder="Что вы ищете?" class="main-search-input">
+                        <a href="#" class="medium-btn green-btn search-btn">Найти</a>
+                    </div>
+                </div>
+                <div class="group one-fourth align-right omega">
+                    <div class="mini-cart-holder">
+                        <h2><i class="icn-cart"></i> Ваша корзина:</h2>
+                        <ul class="list">
+                            <li>1 товар на сумму 12 324 <span class="rub">р</span></li>
+                            <li><a href="#">Оформить заказ</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="main-banners-holder">
-            <div class="group">
-                <div class="one-third">
-                    <a href="#" class="main-banner" style="background-image:url(/static/images/banner-1.jpg)"></a>
-                </div>
-                <div class="one-third">
-                    <a href="#" class="main-banner" style="background-image:url(/static/images/banner-1.jpg)"></a>
-                </div>
-                <div class="one-third omega">
-                    <a href="#" class="main-banner" style="background-image:url(/static/images/banner-1.jpg)"></a>
+        <section class="viewed-items-holder group">
+            <div class="slider">
+                <span class="slider-title">Недавно просмотренные товары</span>
+                <i class="icn-slider-left-arrow"></i>
+                <i class="icn-slider-right-arrow"></i>
+                <div class="slider-holder">
+                    <div class="slide group">
+                        <div class="product-mini-holder">
+                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
+                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
+                        </div>
+                        <div class="product-mini-holder">
+                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
+                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
+                        </div>
+                        <div class="product-mini-holder">
+                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
+                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
+                        </div>
+                        <div class="product-mini-holder">
+                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
+                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -200,36 +159,8 @@
                 </div>
             </div>
         </section>
-        
-        <div class="big-hor-splitter"></div>
 
-        <section class="viewed-items-holder group">
-            <div class="slider">
-                <span class="slider-title">Недавно просмотренные товары</span>
-                <i class="icn-slider-left-arrow"></i>
-                <i class="icn-slider-right-arrow"></i>
-                <div class="slider-holder">
-                    <div class="slide group">
-                        <div class="product-mini-holder">
-                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
-                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
-                        </div>
-                        <div class="product-mini-holder">
-                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
-                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
-                        </div>
-                        <div class="product-mini-holder">
-                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
-                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
-                        </div>
-                        <div class="product-mini-holder">
-                            <a href="#"><img src="http://thumbs4.ebaystatic.com/m/mMnSfGiTrPsKBSrHXqTNUcw/140.jpg" alt="" class="product-mini-photo"></a>
-                            <span class="product-mini-name"><a href="#">Манеки неко</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="big-hor-splitter"></div>
 
         <section class="seo-text-holder">
             <div class="group">
@@ -253,8 +184,8 @@
 
         <footer class="main-footer">
             <div class="group">
-                <div class="one-half">Телефон: <span itemprop="telephone">+7 (495) 518-54-56</span></div>
-                <div class="align-right one-half omega">© 2009–2013 Много Подарков</div>
+                <div class="one-half phone-number">Телефон: <span class="header-text" itemprop="telephone">+7 (495) 518-54-56</span></div>
+                <div class="align-right one-half omega header-text">© 2009–2013 Много Подарков</div>
             </div>
         </footer>
 
