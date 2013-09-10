@@ -1,0 +1,115 @@
+@import compass/utilities/sprites/base
+
+// General Sprite Defaults
+// You can override them before you import this file.
+$icons-sprite-base-class: ".icons-sprite" !default
+$icons-sprite-dimensions: false !default
+$icons-position: 0% !default
+$icons-spacing: 0 !default
+$icons-repeat: no-repeat !default
+$icons-prefix: "" !default
+$icons-clean-up: true !default
+$icons-layout: vertical !default
+$icons-inline: false !default
+
+// These variables control the generated sprite output
+// You can override them selectively before you import this file.
+
+$icons-cart-white-position: $icons-position !default
+$icons-cart-white-spacing: $icons-spacing !default
+$icons-cart-white-repeat: $icons-repeat !default
+
+$icons-cart-position: $icons-position !default
+$icons-cart-spacing: $icons-spacing !default
+$icons-cart-repeat: $icons-repeat !default
+
+$icons-check-2-green-position: $icons-position !default
+$icons-check-2-green-spacing: $icons-spacing !default
+$icons-check-2-green-repeat: $icons-repeat !default
+
+$icons-check-green-position: $icons-position !default
+$icons-check-green-spacing: $icons-spacing !default
+$icons-check-green-repeat: $icons-repeat !default
+
+$icons-cross-red-position: $icons-position !default
+$icons-cross-red-spacing: $icons-spacing !default
+$icons-cross-red-repeat: $icons-repeat !default
+
+$icons-fb-position: $icons-position !default
+$icons-fb-spacing: $icons-spacing !default
+$icons-fb-repeat: $icons-repeat !default
+
+$icons-logo-position: $icons-position !default
+$icons-logo-spacing: $icons-spacing !default
+$icons-logo-repeat: $icons-repeat !default
+
+$icons-mail-position: $icons-position !default
+$icons-mail-spacing: $icons-spacing !default
+$icons-mail-repeat: $icons-repeat !default
+
+$icons-phone-position: $icons-position !default
+$icons-phone-spacing: $icons-spacing !default
+$icons-phone-repeat: $icons-repeat !default
+
+$icons-search-position: $icons-position !default
+$icons-search-spacing: $icons-spacing !default
+$icons-search-repeat: $icons-repeat !default
+
+$icons-slider-left-arrow-position: $icons-position !default
+$icons-slider-left-arrow-spacing: $icons-spacing !default
+$icons-slider-left-arrow-repeat: $icons-repeat !default
+
+$icons-slider-right-arrow-position: $icons-position !default
+$icons-slider-right-arrow-spacing: $icons-spacing !default
+$icons-slider-right-arrow-repeat: $icons-repeat !default
+
+$icons-small-star-position: $icons-position !default
+$icons-small-star-spacing: $icons-spacing !default
+$icons-small-star-repeat: $icons-repeat !default
+
+$icons-vk-position: $icons-position !default
+$icons-vk-spacing: $icons-spacing !default
+$icons-vk-repeat: $icons-repeat !default
+
+$icons-sprites: sprite-map("icons/*.png", $cleanup: $icons-clean-up, $icons_cart_position: $icons-cart-position, $icons_cart_repeat: $icons-cart-repeat, $icons_cart_spacing: $icons-cart-spacing, $icons_cart_white_position: $icons-cart-white-position, $icons_cart_white_repeat: $icons-cart-white-repeat, $icons_cart_white_spacing: $icons-cart-white-spacing, $icons_check_2_green_position: $icons-check-2-green-position, $icons_check_2_green_repeat: $icons-check-2-green-repeat, $icons_check_2_green_spacing: $icons-check-2-green-spacing, $icons_check_green_position: $icons-check-green-position, $icons_check_green_repeat: $icons-check-green-repeat, $icons_check_green_spacing: $icons-check-green-spacing, $icons_cross_red_position: $icons-cross-red-position, $icons_cross_red_repeat: $icons-cross-red-repeat, $icons_cross_red_spacing: $icons-cross-red-spacing, $icons_fb_position: $icons-fb-position, $icons_fb_repeat: $icons-fb-repeat, $icons_fb_spacing: $icons-fb-spacing, $icons_logo_position: $icons-logo-position, $icons_logo_repeat: $icons-logo-repeat, $icons_logo_spacing: $icons-logo-spacing, $icons_mail_position: $icons-mail-position, $icons_mail_repeat: $icons-mail-repeat, $icons_mail_spacing: $icons-mail-spacing, $icons_phone_position: $icons-phone-position, $icons_phone_repeat: $icons-phone-repeat, $icons_phone_spacing: $icons-phone-spacing, $icons_search_position: $icons-search-position, $icons_search_repeat: $icons-search-repeat, $icons_search_spacing: $icons-search-spacing, $icons_slider_left_arrow_position: $icons-slider-left-arrow-position, $icons_slider_left_arrow_repeat: $icons-slider-left-arrow-repeat, $icons_slider_left_arrow_spacing: $icons-slider-left-arrow-spacing, $icons_slider_right_arrow_position: $icons-slider-right-arrow-position, $icons_slider_right_arrow_repeat: $icons-slider-right-arrow-repeat, $icons_slider_right_arrow_spacing: $icons-slider-right-arrow-spacing, $icons_small_star_position: $icons-small-star-position, $icons_small_star_repeat: $icons-small-star-repeat, $icons_small_star_spacing: $icons-small-star-spacing, $icons_vk_position: $icons-vk-position, $icons_vk_repeat: $icons-vk-repeat, $icons_vk_spacing: $icons-vk-spacing, $layout: $icons-layout)
+
+// All sprites should extend this class
+// The icons-sprite mixin will do so for you.
+@if $icons-inline
+  #{$icons-sprite-base-class}
+    background-image: inline-sprite($icons-sprites)
+@else
+  #{$icons-sprite-base-class}
+    background: $icons-sprites no-repeat
+
+//sass functions to return the dimensions of a sprite image as units
+
+@function icons-sprite-width($name)
+  $file: sprite_file($icons-sprites, $name)
+  @return image-width($file)
+
+@function icons-sprite-height($name)
+  $file: sprite_file($icons-sprites, $name)
+  @return image-height($file)
+
+// Use this to set the dimensions of an element
+// based on the size of the original image.
+=icons-sprite-dimensions($name)
+  +sprite-dimensions($icons-sprites, $name)
+
+// Move the background position to display the sprite.
+=icons-sprite-position($name, $offset-x: 0, $offset-y: 0)
+  +sprite-background-position($icons-sprites, $name, $offset-x, $offset-y)
+
+// Extends the sprite base class and set the background position for the desired sprite.
+// It will also apply the image dimensions if $dimensions is true.
+=icons-sprite($name, $dimensions: $icons-sprite-dimensions, $offset-x: 0, $offset-y: 0)
+  @extend #{$icons-sprite-base-class}
+  +sprite($icons-sprites, $name, $dimensions, $offset-x, $offset-y)
+
+=icons-sprites($sprite-names, $dimensions: $icons-sprite-dimensions, $prefix: sprite-map-name($icons-sprites), $offset-x: 0, $offset-y: 0)
+  +sprites($icons-sprites, $sprite-names, $icons-sprite-base-class, $dimensions, $prefix, $offset-x, $offset-y)
+
+// Generates a class for each sprited image.
+=all-icons-sprites($dimensions: $icons-sprite-dimensions, $prefix: sprite-map-name($icons-sprites), $offset-x: 0, $offset-y: 0)
+  +icons-sprites(cart-white cart check-2-green check-green cross-red fb logo mail phone search slider-left-arrow slider-right-arrow small-star vk, $dimensions, $prefix, $offset-x, $offset-y)

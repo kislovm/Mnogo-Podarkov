@@ -14,12 +14,13 @@ $grid-padding         : $gutter-width
 
 $main-link-color      : #00a1d9
 
-$main-dark-color      : #34495e
-$main-light-color     : #51bf98
+$main-dark-color      : #4F4F4F
+$main-light-color     : #003056
 $sub-dark-color       : #929292
+$header-link-color    : #47d9bf
 $error-color          : #c53730
 
-$bg-color             : #f8cf79 
+$bg-color             : #f2f2f2
 $border-color         : #dee1e3
 
 $icons                : sprite-map("icons/*.png", $layout: smart)
@@ -110,13 +111,15 @@ a
     display: inline-block
     margin-top: .8em
     margin-bottom: .3em
+.header-link
+    color: $header-link-color
+    cursor: pointer
+    &:hover
+        color: adjust-lightness($header-link-color, -15%)
+.header-text
+    color: #ffffff
 .phone-number
-    font-size: 1.25em
-    @extend .sub-header
-    margin-top: .45em
-    margin-bottom: .15em
-    a
-        color: $main-dark-color
+    color: #ced0d5
 .list
     > li
         font-size: .875em
@@ -310,39 +313,23 @@ p
     margin-top: .35em
     i
         margin-right: .3em
+.main-header
+    background: $main-light-color
+    padding: .4em 2.5em
+    margin: 0 -2.5em 0
 .main-footer
     background: $main-light-color
     margin: 1.5em -2.5em 0
-    padding: .7em 2.5em
+    padding: .4em 2.5em
     +box-shadow(adjust-lightness($main-light-color, -15%) 0 3px 0 -2px, adjust-lightness($main-light-color, -13%) 0 6px 0 -4px, adjust-lightness($main-light-color, -10%) 0 8px 0 -6px, adjust-lightness($main-light-color, -5%) 0 10px 0 -7px)
 
 
 // Navigation and search
 .main-nav-holder
-    background: #eef1f2
     margin: 0 -3em
     padding: 1.5em 3em 1em
     position: relative
-    &:before
-        content: ''
-        width: 0px
-        height: 0px
-        border-style: solid
-        border-width: 0 8px 11px 0
-        border-color: transparent $sub-dark-color  transparent transparent
-        position: absolute
-        bottom: -11px
-        left: 0
-    &:after
-        content: ''
-        width: 0px
-        height: 0px
-        border-style: solid
-        border-width: 0 0 11px 8px
-        border-color: transparent transparent transparent $sub-dark-color
-        position: absolute
-        bottom: -11px
-        right: 0
+
 .logo
     position: relative
     top: .2em
@@ -356,6 +343,7 @@ p
             pointer-events: none
 .search-holder
     position: relative
+    padding: 0
     i
         position: absolute
         top: .6em
@@ -363,9 +351,14 @@ p
         z-index: 2
         +opacity(.8)
 .main-search-input
-    width: 37.5em
+    width: 26.5em
     margin-right: .5em
     padding-left: 2.3em
+    border: none
+    outline: none
+.search-btn
+    border: solid 2px #dee1e3
+    +border-radius
 .sub-nav
     +span-columns(2.5)
     margin-top: .65em
