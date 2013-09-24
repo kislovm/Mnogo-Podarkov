@@ -356,7 +356,6 @@ p
     > a
         margin-right: 1em
         &.selected
-            @extend .bold-font
             color: $main-dark-color
             pointer-events: none
 .search-holder
@@ -440,6 +439,20 @@ p
     top: 50%
     left: -12px
     cursor: pointer
+    &:hover
+        &:after
+            display: none
+    &:active
+        margin-top: -11px
+    &:after
+        content: ''
+        background: white
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        +opacity(.2)
 .icn-slider-right-arrow
     @extend .icn-slider-left-arrow
     left: auto
